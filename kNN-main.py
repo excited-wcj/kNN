@@ -18,7 +18,8 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.scatter(datingDataMat[:,1], datingDataMat[:,2], 15.0*array(datingLabels), 15.0*array(datingLabels))
 #需要reload(kNN) ax.scatter(datingDataMat[:,0], datingDataMat[:,1], 15.0*array(datingLabels), 15.0*array(datingLabels))
-plt.show()  #Q 这两张图片怎么显示轴便签？而且还是自定义标签？要去学习malplotlib的开发文档
+ #Q 这两张图片怎么显示轴便签？而且还是自定义标签？要去学习malplotlib的开发文档
+plt.show()  
 #第三部分：
 import kNN
 imp.reload(kNN) #import importlib as imp
@@ -29,7 +30,10 @@ minVals
 #第四部分：对陌生异性好感度预测结果
 kNN.classifyPerson()
 #第五部分：手写识别系统
-testVector = kNN.img2vector('testDigits/0_13.txt')#Q 识别文件名称分别有什么方法识别带文件格式和不带文件格式的两种？
+#Q 测试样本与训练样本的实质区别
+testVector = kNN.img2vector('testDigits/0_13.txt')
+#Q 识别文件名称分别有什么方法识别带文件格式和不带文件格式的两种？
 testVector[0, 0:31]
 testVector[0, 32:63]
-kNN.handwritingClassTest()#Q 提高准确率的（即降低错误率的方式）：改变k值，随机选取训练样本，改变训练样本的熟
+kNN.handwritingClassTest()
+#Q 提高准确率的（即降低错误率的方式）：改变k值，随机选取训练样本，改变训练样本的熟
